@@ -37,8 +37,11 @@ const calculateExercises = (
 ): CalculateExercise => {
   const average =
     weeklyExercise.reduce((a, b) => a + b, 0) / weeklyExercise.length;
-  let rating: number;
-  let ratingDescription: string;
+  let rating = 0;
+  let ratingDescription = '';
+
+  rating = 0;
+  ratingDescription = '';
 
   if (average < target * 0.5) {
     rating = 1;
@@ -66,10 +69,20 @@ const calculateExercises = (
   };
 };
 
+interface Error {
+  status: string;
+  statusText: string;
+  error: { message: string | undefined } | undefined;
+}
+
 try {
   const { target, weeklyExercise } = parseExerciseArguments(process.argv);
   // console.log(target, weeklyExercise);
   console.log(calculateExercises(weeklyExercise, target));
 } catch (error) {
-  console.log('Error, something bad happened, message: ', error.message);
+  // https://stackoverflow.com/questions/54649465/how-to-do-try-catch-and-finally-statements-in-typescript
+  console.log(
+    'Error, something bad happened, message: ',
+    (error as Error).message
+  );
 }

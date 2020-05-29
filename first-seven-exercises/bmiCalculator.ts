@@ -51,5 +51,10 @@ try {
   const { height, weight } = parseArguments(process.argv);
   console.log(calculateBmi(weight, height));
 } catch (error) {
-  console.log('Error, something bad happened, message: ', error.message);
+  // Better to asser the type
+  if (error instanceof Error) {
+    console.log('Error, something bad happened, message: ', error.message);
+  } else {
+    throw error;
+  }
 }
