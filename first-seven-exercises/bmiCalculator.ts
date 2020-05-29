@@ -19,7 +19,7 @@ const parseArguments = (args: Array<string>): ParsedValues => {
 
 type Result = string;
 
-const calculateBmi = (weight: number, height: number): Result => {
+export const calculateBmi = (weight: number, height: number): Result => {
   type bmi = number;
 
   const bmi = weight / Math.pow(height / 100, 2);
