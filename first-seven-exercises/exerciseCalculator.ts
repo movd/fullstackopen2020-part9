@@ -31,7 +31,7 @@ interface CalculateExercise {
   average: number;
 }
 
-const calculateExercises = (
+export const calculateExercises = (
   weeklyExercise: Array<number>,
   target: number
 ): CalculateExercise => {
@@ -68,12 +68,6 @@ const calculateExercises = (
     average,
   };
 };
-
-interface Error {
-  status: string;
-  statusText: string;
-  error: { message: string | undefined } | undefined;
-}
 
 try {
   const { target, weeklyExercise } = parseExerciseArguments(process.argv);
