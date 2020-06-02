@@ -1,0 +1,8 @@
+### Diagnoses Route
+GET http://localhost:3001/api/diagnoses HTTP/1.1
+
+
+### Patients Route
+GET http://localhost:3001/api/patients HTTP/1.1
+
+
