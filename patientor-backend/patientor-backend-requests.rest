@@ -1,8 +1,21 @@
-### Diagnoses Route
+### Read all diagnoses
 GET http://localhost:3001/api/diagnoses HTTP/1.1
 
 
-### Patients Route
+### Read all patients 
 GET http://localhost:3001/api/patients HTTP/1.1
 
+### Read a specific patient
+GET http://localhost:3001/api/patients/d2773c6e-f723-11e9-8f0b-362b9e155667 HTTP/1.1
 
+### Create new Patient
+POST http://localhost:3001/api/patients HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Frank Nord",
+    "dateOfBirth": "1977-05-04",
+    "gender": "male",
+    "ssn": "171199A437F",
+    "occupation": "nerd"
+}
