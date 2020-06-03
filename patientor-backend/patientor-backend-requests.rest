@@ -8,7 +8,7 @@ GET http://localhost:3001/api/patients HTTP/1.1
 ### Read a specific patient
 GET http://localhost:3001/api/patients/d2773c6e-f723-11e9-8f0b-362b9e155667 HTTP/1.1
 
-### Create new Patient
+### Create new Patient with invalid SSN
 POST http://localhost:3001/api/patients HTTP/1.1
 content-type: application/json
 
@@ -18,4 +18,16 @@ content-type: application/json
     "gender": "male",
     "ssn": "171199A437F",
     "occupation": "nerd"
+}
+
+### Create new valid Patient
+POST http://localhost:3001/api/patients HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Helena Aalto",
+    "dateOfBirth": "1898-05-09",
+    "gender": "female",
+    "ssn": "100598+5749",
+    "occupation": "https://en.wikipedia.org/wiki/Female_Red_Guards_of_the_Finnish_Civil_War"
 }
